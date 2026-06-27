@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0A0A0F;
+  --bg-card: #0E1018;
+  --bg-card-hover: #12151F;
+  --bg-surface: #080B12;
+  --border: #1A1E2E;
+  --border-hover: #252A3E;
+  --border-accent: #7C6FCD40;
+  --text: #E2E8F0;
+  --text-secondary: #64748B;
+  --text-muted: #374151;
+  --accent: #7C6FCD;
+  --accent-light: #A78BFA;
+  --accent-glow: #7C6FCD20;
+  --green: #4ADE80;
+  --red: #F87171;
+  --orange: #FB923C;
+  --blue: #38BDF8;
+  --amber: #FCD34D;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { overflow-x: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1E2433; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #2D3748; }
+
+input[type='range'] { accent-color: #7C6FCD; }
+button { touch-action: manipulation; }
+* { -webkit-tap-highlight-color: transparent; }
+
+input[type="text"], input[type="number"] { font-size: 16px; }
+@media (min-width: 640px) {
+  input[type="text"], input[type="number"] { font-size: 0.875rem; }
+}
+
+/* Card hover transitions */
+.card-interactive {
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-interactive:hover {
+  border-color: var(--border-hover) !important;
+  background: var(--bg-card-hover) !important;
+}
+
+.tool-card-hover {
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.tool-card-hover:hover {
+  box-shadow: 0 0 0 1px #2A2E42, 0 8px 24px #00000030;
+}
+
+/* Stat card hover */
+.stat-hover {
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.stat-hover:hover {
+  border-color: var(--border-hover) !important;
+}
+
+/* Button transitions */
+.btn-primary {
+  transition: opacity 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+  opacity: 0.92;
+  box-shadow: 0 6px 28px #7C6FCD40;
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+/* Fade in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.4s ease forwards; }
+
+/* Spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
