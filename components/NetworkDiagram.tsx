@@ -5,7 +5,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { r6, runTraining as engineRunTraining, applyNimFactor } from "@/lib/engine";
 import { DEFAULT_CONFIG, INITIAL_WEIGHTS_RAW, TRAINING_DATA_RAW } from "@/lib/constants";
 
-function runTraining(nimFactor = 0.3855, maxEpoch = 2000) {
+function runTraining(nimFactor = 0.3855, MaxEpoch = 1000) {
   return engineRunTraining({ ...DEFAULT_CONFIG, nimFactor, maxEpoch });
 }
 

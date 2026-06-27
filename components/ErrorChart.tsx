@@ -9,8 +9,8 @@ import {
 import { r6, runTraining as engineRunTraining } from "@/lib/engine";
 import { DEFAULT_CONFIG } from "@/lib/constants";
 
-function runTraining(nimFactor = 0.3855, maxEpoch = 2000) {
-  return engineRunTraining({ ...DEFAULT_CONFIG, nimFactor, maxEpoch });
+function runTraining(nimFactor = 0.3855, MaxEpoch = 1000) {
+  return engineRunTraining({ ...DEFAULT_CONFIG, nimFactor, MaxEpoch });
 }
 
 const fmt6 = (n) => r6(n).toFixed(6);

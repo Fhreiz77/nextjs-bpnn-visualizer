@@ -8,8 +8,8 @@ import { INITIAL_WEIGHTS_RAW, TRAINING_DATA_RAW, DEFAULT_CONFIG } from "@/lib/co
 
 const E_CUSTOM = 2.71828183;
 
-function runTraining(nimFactor = 0.3855, maxEpoch = 2000) {
-  return engineRunTraining({ ...DEFAULT_CONFIG, nimFactor, maxEpoch });
+function runTraining(nimFactor = 0.3855, MaxEpoch = 1000) {
+  return engineRunTraining({ ...DEFAULT_CONFIG, nimFactor, MaxEpoch });
 }
 
 // ─── STATE MACHINE ───────────────────────────────────────────
